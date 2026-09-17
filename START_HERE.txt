@@ -1,0 +1,21 @@
+SECURITY STATUS ANALYZER — STUDENT DATA
+
+The security_reports directory contains simulated workstation security-status
+reports for the graded assignment.
+
+Your program should process the workstation report files according to the
+assignment instructions and should not depend on hard-coded individual filenames.
+
+The collection intentionally includes:
+- normal reports,
+- reports that trigger one security rule,
+- reports that trigger multiple rules,
+- boundary values,
+- missing required fields,
+- invalid numeric values,
+- a non-report Markdown file.
+
+Do not "fix" the supplied reports. Your program should detect and respond to
+problems in the data.
+
+All data in this package is fictional and intended for authorized classroom use.
