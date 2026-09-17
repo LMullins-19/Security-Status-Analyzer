@@ -24,9 +24,9 @@ def analyze_report(report):
     # an earlier finding.
 
     if reasons:
-        return "ATTENTION", reasons
+        return "NEEDSATTENTION", reasons
 
-    return "OK", []
+    return "GOOD", []
 
 
 def main():
@@ -34,14 +34,14 @@ def main():
     reports = find_reports(report_directory)
 
     counts = {
-        "OK": 0,
-        "ATTENTION": 0,
+        "GOOD": 0,
+        "NEEDS ATTENTION": 0,
         "DATA ERROR": 0,
     }
 
-    print("=" * 60)
+    print("-" * 40)
     print("SECURITY STATUS ANALYZER")
-    print("=" * 60)
+    print("-" * 40)
 
     for report_path in reports:
         try:
@@ -65,10 +65,10 @@ def main():
     print("\n" + "=" * 60)
     print("SUMMARY")
     print("=" * 60)
-    print(f"OK:          {counts['OK']}")
-    print(f"ATTENTION:   {counts['ATTENTION']}")
-    print(f"DATA ERROR:  {counts['DATA ERROR']}")
-    print(f"TOTAL:       {sum(counts.values())}")
+    print(f"GOOD: {counts['GOOD']}")
+    print(f"NEEDS ATTENTION: {counts['NEEDS ATTENTION']}")
+    print(f"DATA ERROR: {counts['DATA ERROR']}")
+    print(f"TOTAL: {sum(counts.values())}")
 
 
 if __name__ == "__main__":
